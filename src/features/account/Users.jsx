@@ -48,7 +48,7 @@ const Users = () => {
   const [helperName, setHelperName] = React.useState("");
   const [helperLastname, setHelperLastname] = React.useState("");
   const [helperEmail, setHelperEmail] = React.useState("");
-  const [ setHelperPriority] = React.useState("");
+  const [ helperPriority,setHelperPriority] = React.useState("");
   const [currentUserId, setCurrentUserId] = React.useState(null);
   const [ setCurrentUser] = React.useState({});
   const [formData, setFormData] = React.useState({
@@ -57,6 +57,7 @@ const Users = () => {
     email: "",
     priority: "",
   });
+  
 
   const getUsers = async () => {
     agent.GetUsers.getUsers().then((response) => {
@@ -234,7 +235,7 @@ const Users = () => {
                 <TableCell component="th" scope="row">
                   {user.name}
                 </TableCell>
-                <TableCell align="right">{user.lastname}</TableCell>
+                <TableCell align="right">{user.lastname} {helperPriority} </TableCell>
                 <TableCell align="right">{user.email}</TableCell>
                 <TableCell align="right">
                   {user.priority === 0 ? "Usuario normal" : "Administrador"}
