@@ -4,7 +4,6 @@ import {
   Grid,
   TextField,
   Box,
-  IconButton,
   Button,
   Dialog,
   DialogTitle,
@@ -49,9 +48,9 @@ const Users = () => {
   const [helperName, setHelperName] = React.useState("");
   const [helperLastname, setHelperLastname] = React.useState("");
   const [helperEmail, setHelperEmail] = React.useState("");
-  const [helperPriority, setHelperPriority] = React.useState("");
+  const [ setHelperPriority] = React.useState("");
   const [currentUserId, setCurrentUserId] = React.useState(null);
-  const [currentUser, setCurrentUser] = React.useState({});
+  const [ setCurrentUser] = React.useState({});
   const [formData, setFormData] = React.useState({
     name: "",
     lastname: "",
@@ -135,7 +134,7 @@ const Users = () => {
     }
   }, [formData.lastname]);
 
-  const handleEdit = async (userId) => {
+  const handleEdit = async () => {
     if (errorName || errorLastname || errorEmail || errorPriority) {
       return;
     }
